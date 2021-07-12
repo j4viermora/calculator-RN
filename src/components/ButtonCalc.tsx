@@ -3,17 +3,21 @@ import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 
 interface Props {
-    text: string
-    color?: string
-    width?: boolean
+    text: string;
+    color?: string;
+    width?: boolean;
+    actionButton: ( textNumber: string ) => void 
 }
 
-export const ButtonCalc = ( { text, color = "#2d2d2d", width  }:Props ) => {
+export const ButtonCalc = ( { text, color = "#2d2d2d", width , actionButton }:Props ) => {
     
     
     return (
-        <TouchableOpacity>
-           <View 
+        <TouchableOpacity 
+            // onPress={ actionButton }
+            onPress={ () => actionButton( text ) }
+            >
+           <View
             style={ {
                 ...styles.button,
                 backgroundColor: color,
@@ -32,12 +36,12 @@ export const ButtonCalc = ( { text, color = "#2d2d2d", width  }:Props ) => {
 const styles = StyleSheet.create({
     button:{
         backgroundColor: "#2d2d2d",
-        borderRadius: 1000 ,
-        height: 60,
+        borderRadius: 100 ,
+        height: 80,
         justifyContent: "center",
         marginHorizontal: 5,
         // padding: 10,
-        width: 60,
+        width: 80,
     },
     buttonText: {
         color: "#0d0d0d",
