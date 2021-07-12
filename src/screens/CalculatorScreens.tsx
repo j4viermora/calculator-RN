@@ -9,17 +9,18 @@ export const CalculatorScreens = () => {
     
     
     const { 
-        number,
-        lastNumber,
-        clean,
         buildNumber,
-        positiveNegative,
+        ButtonAdd,
         buttonDelete,
         ButtonDivide,
         ButtonMultiply,
         ButtonSubtract,
-        ButtonAdd,
-        calc, } = useCalculator()
+        calc, 
+        clean,
+        lastNumber,
+        number,
+        positiveNegative,
+        } = useCalculator()
 
 
     return (
